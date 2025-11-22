@@ -1,0 +1,207 @@
+/* Base styling */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Cairo", sans-serif;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+:root{
+    --Background: #F7F7F7;
+    --Section: #FFFFFF;
+    --Primary: #4A90E2; 
+    --Secondary: #7B8FA1; 
+    --Text_Dark: #2E2E2E; 
+    --Text: #555555; 
+    --Accent: #E7F2FF; 
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.section{
+    padding: 60px 0;
+}
+
+.container{
+    padding: 0px 15px;
+    margin: 10px auto;
+}
+
+/* small */
+@media (min-width:768px){
+    .container{ width: 750px; }
+}
+/* medium */
+@media (min-width:992px){
+    .container{ width: 970px; }
+}
+/* large */
+@media (min-width:1200px){
+    .container{ width: 1170px; }
+}
+
+.main_heading{
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.main_heading .heading{
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: var(--Text_Dark);
+}
+@media (max-width:768px){
+    .main_heading .heading{
+        font-size: 1.7rem;
+    }
+}
+.main_heading .paragraph{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--Text);
+}
+
+/* Key Points */
+.key_point{
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+
+}
+@media (max-width:768px){
+    .key_point {
+        flex-direction: column;
+    }
+}
+.key_point .point{
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 48%;
+    transition: .3s;
+    background-color: var(--Secondary);
+}
+@media (max-width:768px){
+    .key_point .point{
+        max-width: 100%;
+    }
+}
+.key_point .point:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+.key_point .heading_point{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.key_point .paragraph_point{
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.footer{
+    background-color: var(--Background);
+}
+.footer .content{
+    padding: 20px;
+
+}
+.footer .content .member{
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--Text_Dark);
+    padding: 10px 20px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    padding-left: 50px;
+    margin-bottom: 5px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.footer .content .member::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--Secondary);
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+.footer .content .member:hover{
+    background-color: var(--Primary);
+    color: var(--Background);
+    border: 1px solid var(--Background);
+}
+.footer .content .member:hover::before{
+    background-color: var(--Background);
+    animation: bounce 2s infinite;
+}
+
+@media (max-width:768px){
+    .footer .content .member{
+        padding: 10px 20px;
+        font-size: 0.7rem;
+    }
+    .footer .content .member::before{
+        width: 10px;
+        height: 10px;
+        left: 5px;
+    }
+
+}
+@keyframes bounce {
+    0%,10%,20%,50%,80%,100%{
+        transform: translateY(-50%);
+    }
+    40%,60%{
+        transform: translateY(-15px);
+    }
+}
+/* ----------------- CYBERSECURITY THEME ----------------- */
+.cyber{
+    background-color: #F0F8FF;
+}
+
+.cyber .main_heading .heading{
+    color: #1E3A8A;
+}
+
+.cyber .main_heading .paragraph{
+    color: #2E2E2E;
+}
+
+.cyber .key_point .point{
+    background-color: #DCEEFB;
+}
+
+/* ----------------- BIOINFORMATICS THEME ----------------- */
+.bio{
+    background-color: #FFF5F5;
+}
+
+.bio .main_heading .heading{
+    color: #900332d6;
+}
+
+.bio .main_heading .paragraph{
+    color: #333333;
+}
+
+.bio .key_point .point{
+    background-color: #fcbdeacc;
+}
+
+
