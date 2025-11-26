@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
     keyPoints.forEach(point => {
-        point.addEventListener('click', () => {
+        point.addEventListener('click', (event) => {
+
+            if (event.target.tagName === "A"){
+                return;
+            }
             
             const imageSrc = point.getAttribute('data-image-src');
             const captionText = point.getAttribute('data-caption');
